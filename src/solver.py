@@ -32,7 +32,7 @@ class ValuableObject:
     
     def __str__(self) -> str:
         return f"Object #{self.id}:\n\tValue: {self.value}, Weight: {self.weight}"
-    
+
 class ReccurentSolver:
     """Алгоритм решения задачи о ранце с помощью рекуррентных соотношений"""
     @staticmethod
@@ -51,7 +51,7 @@ class ReccurentSolver:
         if len(good_objs) != 0:
             return ReccurentSolver.__inner_step(good_objs, current_max_weight) 
         return []
-    
+
     @staticmethod
     def __inner_step(good_objs: List[ValuableObject], current_max_weight: int) -> List[ValuableObject]:
         """
