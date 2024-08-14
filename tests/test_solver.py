@@ -14,6 +14,16 @@ class TestSolver:
         res = solve(test_obj, 8)
         assert expected_ids == set(obj.id for obj in res)
 
+    def test_float(self):
+        test_obj = [
+            ValuableObject(value=3, weight=1.5, id=1),
+            ValuableObject(value=2, weight=2, id=2),
+            ValuableObject(value=5, weight=0.5, id=3)
+        ]
+        expected_ids = {1, 3}
+        res = solve(test_obj, 2)
+        assert expected_ids == set(obj.id for obj in res)
+
     def test_no_solution(self):
         test_obj = [
             ValuableObject(value=3, weight=5, id=1),
